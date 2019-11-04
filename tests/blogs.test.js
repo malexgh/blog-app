@@ -11,7 +11,7 @@ afterEach(async () => {
     await page.close();
 });
 
-describe('User is logged in', async () => {
+describe('User is logged in', () => {
     beforeEach(async () => {
         await page.login();
         await page.click('a.btn-floating');
@@ -22,7 +22,7 @@ describe('User is logged in', async () => {
         expect(label).toEqual('Blog Title');
     });
 
-    describe('And using valid inputs', async () => {
+    describe('And using valid inputs', () => {
         beforeEach(async () => {
             await page.type('.title input', 'My Title');
             await page.type('.content input', 'My Content');
@@ -44,7 +44,7 @@ describe('User is logged in', async () => {
         });
     });
 
-    describe('And using invalid inputs', async () => {
+    describe('And using invalid inputs', () => {
         beforeEach(async () => {
             await page.click('form button');
         });
@@ -58,7 +58,7 @@ describe('User is logged in', async () => {
     });
 });
 
-describe('User is not logged in', async () => {
+describe('User is not logged in', () => {
     // test('Cannot create blog posts', async () => {
     //     const result = await page.post('/api/blogs', { title: 'My Title', content: 'My Content' });
     //     expect(result).toEqual({ error: 'You must log in!' });
